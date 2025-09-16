@@ -6,144 +6,58 @@
   <title>HausOfPrints</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Montserrat', sans-serif; background-color: #FFF8E7; color: #111; overflow-x: hidden; }
+    body { font-family: 'Montserrat', sans-serif; background-color: #FFF8E7; color: #111; margin:0; padding:0; }
     section { min-height: 100vh; display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center; padding: 2rem; }
-
     h1 { font-size: 3rem; margin-bottom: 1rem; }
     p { font-size: 1.2rem; max-width: 600px; margin-bottom: 2rem; }
 
-    .btn {
-      position: relative;
-      padding: 0.8rem 2rem;
-      background-color: #111;
-      color: #FFF;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: transform 0.3s, box-shadow 0.3s;
-      overflow: hidden;
-      margin: 0.5rem;
-    }
-
+    .btn { padding: 0.8rem 2rem; background-color: #111; color: #fff; border: none; border-radius: 25px; cursor: pointer; margin: 0.5rem; transition: transform 0.3s, box-shadow 0.3s; }
     .btn:hover { transform: scale(1.05); box-shadow: 0 0 20px 5px #ff6a00; }
 
-    /* flames animation */
-    .btn::before {
-      content: '';
-      position: absolute;
-      top: -50%; left: -50%;
-      width: 200%; height: 200%;
-      background: radial-gradient(circle, rgba(255, 140, 0, 0.6) 0%, transparent 70%);
-      animation: flame 2s infinite;
-      pointer-events: none;
-    }
-
-    @keyframes flame {
-      0% { transform: translateY(0) scale(1); opacity: 0.6; }
-      50% { transform: translateY(-10px) scale(1.2); opacity: 0.8; }
-      100% { transform: translateY(0) scale(1); opacity: 0.6; }
-    }
-
-    .fade-in { opacity: 0; transform: translateY(50px); transition: all 1s ease-out; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    /* Product Card */
+    .product-card { background-color: #fff; box-shadow: 0 8px 20px rgba(0,0,0,0.2); border-radius: 20px; padding: 2rem; max-width: 700px; margin: 2rem auto; text-align: left; }
+    .product-card h2 { margin-bottom: 1rem; }
+    .product-card ul { margin-bottom: 1rem; }
 
     html { scroll-behavior: smooth; }
-
-    /* Overlay */
-    .overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.7);
-      display: none;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .overlay-content {
-      background: #FFF8E7;
-      padding: 2rem;
-      border-radius: 20px;
-      position: relative;
-      width: 90%;
-      max-width: 500px;
-      text-align: center;
-    }
-
-    .overlay-close {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background: #111;
-      color: #FFF;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      font-weight: bold;
-    }
   </style>
 </head>
 <body>
 
+  <!-- Hero Section -->
   <section style="background-color:#FFF8E7;">
-    <h1 class="fade-in">Welcome to HausOfPrints</h1>
-    <p class="fade-in">A sleek, minimalist hub for digital products, planners, and printables — no physical products, just pure creativity.</p>
-    <button class="btn fade-in" onclick="document.querySelector('#section2').scrollIntoView({behavior: 'smooth'})">Explore</button>
+    <h1>Welcome to HausOfPrints</h1>
+    <p>A sleek, minimalist hub for digital products, planners, and printables — no physical products, just pure creativity.</p>
+    <button class="btn" onclick="document.querySelector('#products').scrollIntoView({behavior: 'smooth'})">Explore</button>
   </section>
 
-  <section id="section2" style="background-color:#FDF5E6;">
-    <h1 class="fade-in">Our Digital Products</h1>
-    <p class="fade-in">Discover curated printables, planners, and creative tools designed to help you organize, create, and thrive.</p>
+  <!-- Products Section -->
+  <section id="products" style="background-color:#FDF5E6; width:100%;">
+    <h1>Our Digital Products</h1>
+    <p>Discover curated printables, planners, and creative tools designed to help you organize, create, and thrive.</p>
 
-    <div class="fade-in" style="text-align:left; max-width: 700px; margin: 2rem auto;">
+    <div class="product-card">
       <h2>Minimalist To-Do List – Daily Task Planner Printable</h2>
-      <p>Stay organized and make every day productive with this Minimalist To-Do List Printable. Designed to help you focus on what truly matters, this planner keeps your tasks clear and structured, so you can accomplish more with less stress.</p>
+      <p>Stay organized and make every day productive with this planner.</p>
       <ul>
         <li>Clean, simple layout with tick boxes for each task.</li>
         <li>Dotted lines for neat, easy-to-follow entries.</li>
         <li>Spacious design to write tasks, notes, or reminders.</li>
-        <li>Light floral accents for a subtle, calming aesthetic without cluttering the page.</li>
+        <li>Light floral accents for a subtle, calming aesthetic.</li>
       </ul>
-      <p>Perfect for daily task management, goal setting, productivity tracking, students, professionals, or anyone who loves simplicity.</p>
-      <p>This printable PDF can be downloaded instantly and printed at home or at your favorite print shop. Keep your day organized, reduce stress, and enjoy a little touch of elegance while checking off your tasks.</p>
-      
-      <div style="margin-top: 1rem;">
-        <a href="https://payhip.com/b/JMOd9" target="_blank">
-          <button class="btn">Go to Website</button>
-        </a>
-        <a href="main/planners/planner_todo8362.png" download>
-          <button class="btn">Download Here</button>
-        </a>
+      <div>
+        <a href="https://payhip.com/b/JMOd9" target="_blank"><button class="btn">Go to Website</button></a>
+        <a href="main/planners/planner_todo8362.png" download><button class="btn">Download Here</button></a>
       </div>
     </div>
   </section>
 
-  <section id="section3" style="background-color:#FFF8E7;">
-    <h1 class="fade-in">Get in Touch</h1>
-    <p class="fade-in">Have a question or idea? Reach out — we’d love to hear from you.</p>
-    <button class="btn fade-in" onclick="window.location.href='mailto:hello@hausofprints.com'">Email Us</button>
+  <!-- Contact Section -->
+  <section style="background-color:#FFF8E7; width:100%;">
+    <h1>Get in Touch</h1>
+    <p>Have a question or idea? Reach out — we’d love to hear from you.</p>
+    <button class="btn" onclick="window.location.href='mailto:hello@hausofprints.com'">Email Us</button>
   </section>
-
-  <script>
-    const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
-
-    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-      entries.forEach(entry => {
-        if(!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-        appearOnScroll.unobserve(entry.target);
-      });
-    }, appearOptions);
-
-    faders.forEach(fader => appearOnScroll.observe(fader));
-  </script>
 
 </body>
 </html>
