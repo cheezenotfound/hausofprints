@@ -24,6 +24,7 @@
       font-size: 1rem;
       transition: transform 0.3s, box-shadow 0.3s;
       overflow: hidden;
+      margin: 0.5rem;
     }
 
     .btn:hover { transform: scale(1.05); box-shadow: 0 0 20px 5px #ff6a00; }
@@ -111,7 +112,15 @@
       </ul>
       <p>Perfect for daily task management, goal setting, productivity tracking, students, professionals, or anyone who loves simplicity.</p>
       <p>This printable PDF can be downloaded instantly and printed at home or at your favorite print shop. Keep your day organized, reduce stress, and enjoy a little touch of elegance while checking off your tasks.</p>
-      <button class="btn" id="buyBtn">Buy Now</button>
+      
+      <div style="margin-top: 1rem;">
+        <a href="https://payhip.com/b/YOUR_PRODUCT_KEY" target="_blank">
+          <button class="btn">Go to Website</button>
+        </a>
+        <a href="main/planners/planner_todo8362.png" download>
+          <button class="btn">Download Here</button>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -120,14 +129,6 @@
     <p class="fade-in">Have a question or idea? Reach out — we’d love to hear from you.</p>
     <button class="btn fade-in" onclick="window.location.href='mailto:hello@hausofprints.com'">Email Us</button>
   </section>
-
-  <div class="overlay" id="overlay">
-    <div class="overlay-content">
-      <div class="overlay-close" id="closeOverlay">×</div>
-      <!-- Payhip embed -->
-      <div class="payhip-embed-page" data-key="JMOd9">...</div>
-    </div>
-  </div>
 
   <script>
     const faders = document.querySelectorAll('.fade-in');
@@ -142,23 +143,6 @@
     }, appearOptions);
 
     faders.forEach(fader => appearOnScroll.observe(fader));
-
-    // Overlay logic with dynamic Payhip script loading
-    const overlay = document.getElementById('overlay');
-    const buyBtn = document.getElementById('buyBtn');
-    const closeOverlay = document.getElementById('closeOverlay');
-
-    buyBtn.addEventListener('click', () => {
-      overlay.style.display = 'flex';
-      if (!document.getElementById('payhipScript')) {
-        const script = document.createElement('script');
-        script.id = 'payhipScript';
-        script.src = 'https://payhip.com/embed-page.js?v=24u68984';
-        document.body.appendChild(script);
-      }
-    });
-
-    closeOverlay.addEventListener('click', () => { overlay.style.display = 'none'; });
   </script>
 
 </body>
