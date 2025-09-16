@@ -125,10 +125,7 @@
     <div class="overlay-content">
       <div class="overlay-close" id="closeOverlay">×</div>
       <!-- Payhip embed -->
-      <div class="payhip-container">
-        <div class="payhip-embed-page" data-key="JMOd9">...</div>
-        <script type="text/javascript" src="https://payhip.com/embed-page.js?v=24u68984"></script>
-      </div>
+      <div class="payhip-embed-page" data-key="JMOd9">...</div>
     </div>
   </div>
 
@@ -146,12 +143,21 @@
 
     faders.forEach(fader => appearOnScroll.observe(fader));
 
-    // Overlay logic
+    // Overlay logic with dynamic Payhip script loading
     const overlay = document.getElementById('overlay');
     const buyBtn = document.getElementById('buyBtn');
     const closeOverlay = document.getElementById('closeOverlay');
 
-    buyBtn.addEventListener('click', () => { overlay.style.display = 'flex'; });
+    buyBtn.addEventListener('click', () => {
+      overlay.style.display = 'flex';
+      if (!document.getElementById('payhipScript')) {
+        const script = document.createElement('script');
+        script.id = 'payhipScript';
+        script.src = 'https://payhip.com/embed-page.js?v=24u68984';
+        document.body.appendChild(script);
+      }
+    });
+
     closeOverlay.addEventListener('click', () => { overlay.style.display = 'none'; });
   </script>
 
