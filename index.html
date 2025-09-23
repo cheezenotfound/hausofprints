@@ -21,7 +21,6 @@
 
     *{box-sizing:border-box}
     body{margin:0;background:linear-gradient(180deg, var(--bg), #ffeef5);color:#0f172a;line-height:1.45;padding-bottom:80px;}
-
     a{color:inherit;text-decoration:none;user-select:none;}
     .container{max-width:1200px;margin:0 auto;padding:28px}
     header{position:sticky;top:0;background:rgba(255,255,255,0.7);backdrop-filter:blur(6px);z-index:40;border-bottom:1px solid rgba(15,23,42,0.04);}
@@ -34,12 +33,12 @@
     .hero{padding:100px 28px;text-align:center;}
     .hero h1{font-size:2.8rem;font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:16px;}
     .hero p{color:#6b7280;max-width:600px;margin:0 auto 28px;font-size:1.15rem;}
-    .btn-primary{background:#ec4899;color:white;padding:14px 28px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(20,24,40,0.06);transition:all .3s;font-weight:600;display:inline-block;user-select:none;}
-    .btn-primary:hover{background:#db2777;transform:translateY(-2px);box-shadow:0 10px 30px rgba(16,24,40,0.12);}
+    .btn-primary{background:#ec4899;color:white;padding:14px 28px;border-radius:var(--radius);box-shadow:var(--shadow);transition:all .3s;font-weight:600;display:inline-block;user-select:none;}
+    .btn-primary:hover{background:#db2777;transform:translateY(-2px);box-shadow:var(--shadow-strong)}
 
     .grid{display:flex;flex-direction:column;gap:28px;margin-top:60px;}
-    .card{display:flex;flex-direction:column;align-items:center;background:var(--card);padding:22px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(20,24,40,0.06);transition:transform .3s,box-shadow .3s;}
-    .card:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(16,24,40,0.12);}
+    .card{display:flex;flex-direction:column;align-items:center;background:var(--card);padding:22px;border-radius:var(--radius);box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s;}
+    .card:hover{transform:translateY(-6px);box-shadow:var(--shadow-strong);}
     .card img{width:80%;max-width:300px;height:auto;margin-bottom:16px;border-radius:var(--radius);}
     .card-content{width:100%}
     .card h3{margin:0;font-size:1.2rem;font-weight:600}
@@ -95,6 +94,7 @@
 
   <main class="container" id="shop">
     <div class="grid">
+      <!-- Minimalist To-Do List -->
       <div class="card">
         <img src="https://i.imgur.com/s4jOmZx.png" alt="Minimalist To-Do List Printable">
         <div class="card-content">
@@ -111,6 +111,7 @@
         </div>
       </div>
 
+      <!-- ADHD Daily Planner -->
       <div class="card">
         <img src="https://i.imgur.com/Ii3vCyK.png" alt="ADHD Daily Planner Printable">
         <div class="card-content">
@@ -132,6 +133,24 @@
         </div>
       </div>
 
+      <!-- Social Media Planner -->
+      <div class="card">
+        <img src="https://i.imgur.com/NzFDpeO.jpeg" alt="Social Media Content & Growth Planner">
+        <div class="card-content">
+          <h3>Social Media Content & Growth Planner – Weekly Tracker & Analytics Printable</h3>
+          <p>Stay organized and grow your social media presence with this comprehensive Social Media Content & Growth Planner. Designed for creators, entrepreneurs, and marketers, this printable planner helps you plan content, track analytics, and manage collaborations—all in one place.</p>
+          <ul>
+            <li>Weekly content calendar to schedule posts for multiple platforms.</li>
+            <li>Analytics and growth tracker to monitor followers, engagement, views, and shares.</li>
+            <li>Top hashtags & SEO notes section for strategy optimization.</li>
+            <li>Partnerships & collaboration planner to manage campaigns and connections.</li>
+            <li>Weekly wins & lessons learned to reflect on successes and challenges.</li>
+            <li>Final reflection section for planning next week’s strategy.</li>
+            <li><strong>Digital-friendly format:</strong> You can print it or fill it online using a PDF editor, making it flexible and convenient.</li>
+          </ul>
+          <a href="https://drive.google.com/uc?export=download&id=15wirhG_CBT6M40sixsJ7wAiq_ItkJKM6" class="btn-primary btn-small" target="_blank">Download</a>
+        </div>
+      </div>
     </div>
   </main>
 
