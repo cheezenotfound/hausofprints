@@ -1,70 +1,117 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HausOfPrints</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Haus of Prints — Printables, Planners & Digital Products</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+
   <style>
-    body { font-family: 'Montserrat', sans-serif; background-color: #FFF8E7; color: #111; margin:0; padding:0; }
-    section { min-height: 100vh; display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center; padding: 2rem; }
-    h1 { font-size: 3rem; margin-bottom: 1rem; }
-    p { font-size: 1.2rem; max-width: 600px; margin-bottom: 2rem; }
+    :root{
+      --bg: #fff7fa;
+      --card: #ffffff;
+      --muted: #6b7280;
+      --radius: 14px;
+      --shadow: 0 6px 18px rgba(20,24,40,0.06);
+      --shadow-strong: 0 10px 30px rgba(16,24,40,0.12);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
 
-    .btn { padding: 0.8rem 2rem; background-color: #111; color: #fff; border: none; border-radius: 25px; cursor: pointer; margin: 0.5rem; transition: transform 0.3s, box-shadow 0.3s; }
-    .btn:hover { transform: scale(1.05); box-shadow: 0 0 20px 5px #ff6a00; }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:linear-gradient(180deg, var(--bg), #ffeef5);color:#0f172a;line-height:1.45;padding-bottom:80px;}
 
-    .product-card { background-color: #fff; box-shadow: 0 8px 20px rgba(0,0,0,0.2); border-radius: 20px; padding: 2rem; max-width: 700px; margin: 2rem auto; text-align: left; }
-    .product-card h2 { margin-bottom: 1rem; }
-    .product-card ul { margin-bottom: 1rem; }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1200px;margin:0 auto;padding:28px}
+    header{position:sticky;top:0;background:rgba(255,255,255,0.7);backdrop-filter:blur(6px);z-index:40;border-bottom:1px solid rgba(15,23,42,0.04);}
+    .nav{display:flex;align-items:center;justify-content:space-between;}
+    .logo{font-weight:700;font-size:1.25rem;color:#ec4899;}
+    .nav-links{display:flex;gap:20px;}
+    .nav-links a{font-weight:500;transition:color .25s}
+    .nav-links a:hover{color:#ec4899}
 
-    html { scroll-behavior: smooth; }
+    .hero{padding:100px 28px;text-align:center;}
+    .hero h1{font-size:2.8rem;font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:16px;}
+    .hero p{color:#6b7280;max-width:600px;margin:0 auto 28px;font-size:1.15rem;}
+    .btn-primary{background:#ec4899;color:white;padding:14px 28px;border-radius:var(--radius);box-shadow:var(--shadow);transition:all .3s;font-weight:600;display:inline-block;}
+    .btn-primary:hover{background:#db2777;transform:translateY(-2px);box-shadow:var(--shadow-strong)}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;margin-top:60px;}
+    .card{background:var(--card);padding:22px;border-radius:var(--radius);box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s;}
+    .card:hover{transform:translateY(-6px);box-shadow:var(--shadow-strong)}
+    .card h3{margin:0;font-size:1.2rem;font-weight:600}
+    .card p{color:#6b7280;font-size:.95rem;margin:12px 0}
+    .btn-small{padding:10px 18px;font-size:.9rem;}
+
+    footer{margin-top:100px;padding:40px 28px;background:#fff0f6;color:#475569;text-align:center;font-size:.9rem}
+    footer a{margin:0 8px;color:#6b7280;}
+    footer a:hover{color:#ec4899}
+
+    /* Donate button */
+    .donate-btn {
+      display:inline-block;
+      margin-left:12px;
+      padding:10px 20px;
+      font-weight:700;
+      color:#fff;
+      background:#ff3b3b;
+      border-radius:var(--radius);
+      text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+      animation:pulse 1.5s infinite;
+      text-decoration:none;
+    }
+    @keyframes pulse{
+      0% {transform:scale(1);opacity:1;}
+      50% {transform:scale(1.1);opacity:0.85;}
+      100% {transform:scale(1);opacity:1;}
+    }
   </style>
 </head>
 <body>
+  <header>
+    <div class="container nav">
+      <div class="logo">Haus of Prints</div>
+      <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <!-- Hero Section -->
-  <section style="background-color:#FFF8E7;">
-    <h1>Welcome to HausOfPrints</h1>
-    <p>A sleek, minimalist hub for digital products, planners, and printables — no physical products, just pure creativity.</p>
-    <button class="btn" onclick="document.querySelector('#products').scrollIntoView({behavior: 'smooth'})">Explore</button>
+  <section class="hero">
+    <h1>Organize Your Life with Beautiful Printables</h1>
+    <p>Discover planners, templates, and eBooks designed to simplify your day and spark productivity — all instantly downloadable.</p>
+    <a href="#shop" class="btn-primary">Shop Now</a>
   </section>
 
-  <!-- Products Section -->
-  <section id="products" style="background-color:#FDF5E6; width:100%;">
-    <h1>Our Digital Products</h1>
-    <p>Discover curated printables, planners, and creative tools designed to help you organize, create, and thrive.</p>
-
-    <div class="product-card">
-      <h2>Minimalist To-Do List – Daily Task Planner Printable</h2>
-      <p>Stay organized and make every day productive with this planner.</p>
-      <ul>
-        <li>Clean, simple layout with tick boxes for each task.</li>
-        <li>Dotted lines for neat, easy-to-follow entries.</li>
-        <li>Spacious design to write tasks, notes, or reminders.</li>
-        <li>Light floral accents for a subtle, calming aesthetic.</li>
-      </ul>
-      <div>
-        <a href="https://payhip.com/b/JMOd9" target="_blank"><button class="btn">Go to Website</button></a>
-        <a href="main/planners/planner_todo8362.png" download><button class="btn">Download Here</button></a>
+  <main class="container">
+    <div id="shop" class="grid">
+      <div class="card">
+        <h3>Minimalist To-Do List – Daily Task Planner Printable</h3>
+        <p>Stay organized and make every day productive with this Minimalist To-Do List Printable. Designed to help you focus on what truly matters, this planner keeps your tasks clear and structured, so you can accomplish more with less stress.</p>
+        <ul>
+          <li>Clean, simple layout with tick boxes for each task.</li>
+          <li>Dotted lines for neat, easy-to-follow entries.</li>
+          <li>Spacious design to write tasks, notes, or reminders.</li>
+          <li>Light floral accents for a subtle, calming aesthetic without cluttering the page.</li>
+          <li>Perfect for daily task management, goal setting, students, professionals, or anyone who loves simplicity.</li>
+        </ul>
+        <a href="https://drive.google.com/uc?export=download&id=1_5HVZdTJhzA_OW1OItcJIVuZd7HKX8-M" class="btn-primary btn-small" target="_blank">Download</a>
       </div>
     </div>
-  </section>
+  </main>
 
-  <!-- Contact Section -->
-  <section style="background-color:#FFF8E7; width:100%;">
-    <h1>Get in Touch</h1>
-    <p>Have a question or idea? Reach out — we’d love to hear from you.</p>
-    <button class="btn" onclick="window.location.href='mailto:hello@hausofprints.com'">Email Us</button>
-  </section>
-
-  <!-- Links Section -->
-  <section style="background-color:#FDF5E6; width:100%;">
-    <h1>Links</h1>
+  <footer>
+    <p>© 2025 Haus of Prints. All rights reserved.</p>
     <div>
-      <a href="https://pinterest.com/DailyHealthFitGuide/" target="_blank"><button class="btn">Pinterest</button></a>
+      <a href="https://nl.pinterest.com/DailyHealthFitGuide/" target="_blank">Pinterest</a> ·
+      <a href="https://dailyhealthfitguide.gumroad.com/" target="_blank">Gumroad</a>
+      <a href="https://dailyhealthfitguide.gumroad.com/l/donation" target="_blank" class="donate-btn">Donate</a>
     </div>
-  </section>
-
+  </footer>
 </body>
 </html>
