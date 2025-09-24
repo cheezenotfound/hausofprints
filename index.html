@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Haus of Prints — Printables, Planners & Digital Products</title>
 
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RX4FRGCDFQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RX4FRGCDFQ');
+  </script>
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 
@@ -107,7 +116,7 @@
             <li>Light floral accents for a subtle, calming aesthetic without cluttering the page.</li>
             <li>Perfect for daily task management, goal setting, students, professionals, or anyone who loves simplicity.</li>
           </ul>
-          <a href="https://drive.google.com/uc?export=download&id=1_5HVZdTJhzA_OW1OItcJIVuZd7HKX8-M" class="btn-primary btn-small" target="_blank">Download</a>
+          <a href="https://drive.google.com/uc?export=download&id=1_5HVZdTJhzA_OW1OItcJIVuZd7HKX8-M" class="btn-primary btn-small ga-button" data-event="download_click" data-label="Minimalist To-Do List" target="_blank">Download</a>
         </div>
       </div>
 
@@ -129,7 +138,7 @@
             <li>Gratitude Journal: Reflect on positive moments and cultivate gratitude.</li>
             <li>Weather & Date Fields: Personalize each day with weather conditions and date.</li>
           </ul>
-          <a href="https://drive.google.com/uc?export=download&id=1y-JyRh-5DPwW6Iu-OwUg7J_hrb-EqKeu" class="btn-primary btn-small" target="_blank">Download</a>
+          <a href="https://drive.google.com/uc?export=download&id=1y-JyRh-5DPwW6Iu-OwUg7J_hrb-EqKeu" class="btn-primary btn-small ga-button" data-event="download_click" data-label="ADHD Daily Planner" target="_blank">Download</a>
         </div>
       </div>
 
@@ -148,7 +157,7 @@
             <li>Final reflection section for planning next week’s strategy.</li>
             <li><strong>Digital-friendly format:</strong> You can print it or fill it online using a PDF editor, making it flexible and convenient.</li>
           </ul>
-          <a href="https://drive.google.com/uc?export=download&id=15wirhG_CBT6M40sixsJ7wAiq_ItkJKM6" class="btn-primary btn-small" target="_blank">Download</a>
+          <a href="https://drive.google.com/uc?export=download&id=15wirhG_CBT6M40sixsJ7wAiq_ItkJKM6" class="btn-primary btn-small ga-button" data-event="download_click" data-label="Social Media Planner" target="_blank">Download</a>
         </div>
       </div>
     </div>
@@ -169,7 +178,7 @@
     <div>
       <a href="https://nl.pinterest.com/DailyHealthFitGuide/" target="_blank">Pinterest</a> ·
       <a href="https://dailyhealthfitguide.gumroad.com/" target="_blank">Gumroad</a>
-      <a href="https://dailyhealthfitguide.gumroad.com/l/donation" target="_blank" class="donate-btn">Donate</a>
+      <a href="https://dailyhealthfitguide.gumroad.com/l/donation" target="_blank" class="donate-btn ga-button" data-event="donate_click" data-label="Donate Button">Donate</a>
     </div>
   </footer>
 
@@ -205,6 +214,15 @@
       link.addEventListener('click', e => {
         e.preventDefault();
         smoothScroll(link.getAttribute('data-scroll-to'));
+      });
+    });
+
+    // GA4 Button Click Tracking
+    document.querySelectorAll('.ga-button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const event = btn.getAttribute('data-event') || 'button_click';
+        const label = btn.getAttribute('data-label') || btn.textContent;
+        gtag('event', event, { 'event_label': label });
       });
     });
   </script>
