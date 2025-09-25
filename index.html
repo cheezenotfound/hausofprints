@@ -6,8 +6,8 @@
   <title>Haus of Prints — Printables, Planners & Digital Products</title>
 
   <!-- Favicon -->
-<link rel="icon" type="image/png" href="https://i.imgur.com/Ymzugpk.png">
-  
+  <link rel="icon" type="image/png" href="https://i.imgur.com/Ymzugpk.png">
+
   <!-- Google tag (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RX4FRGCDFQ"></script>
   <script>
@@ -106,6 +106,7 @@
 
   <main class="container" id="shop">
     <div class="grid">
+
       <!-- Minimalist To-Do List -->
       <div class="card">
         <img src="https://i.imgur.com/s4jOmZx.png" alt="Minimalist To-Do List Printable">
@@ -164,21 +165,22 @@
         </div>
       </div>
 
-      <!-- Study Planner -->
+      <!-- Study Planner (NEW) -->
       <div class="card">
-        <img src="https://i.imgur.com/qEvqLk5.jpeg" alt="Study Planner Printable">
+        <img src="https://i.imgur.com/64Q83Kp.jpeg" alt="Study Planner Printable">
         <div class="card-content">
-          <h3>Study Planner Printable – Organize Your Courses & Exams</h3>
-          <p>Boost your productivity and stay on top of your studies with this Study Planner Printable. Perfect for students, this planner helps you schedule your courses, track assignments, and plan exams efficiently.</p>
+          <h3>Study Planner Printable – Organize Courses, Exams & Notes</h3>
+          <p>Boost your productivity and stay on top of your studies with this comprehensive Study Planner Printable. Designed for students and learners of all ages, this planner helps you structure your day, manage assignments, and track exam preparations efficiently. Perfect for handwriting or digital use, it keeps all your important study details in one place.</p>
           <ul>
             <li>Course & Subject Tracker: Organize all your subjects and classes.</li>
-            <li>Assignment Planner: Keep track of homework, projects, and deadlines.</li>
-            <li>Exam Schedule: Plan your exams in advance to reduce stress.</li>
-            <li>Weekly & Daily Layouts: Manage your week and daily tasks easily.</li>
-            <li>Notes Section: Write important reminders or study tips.</li>
-            <li>Motivational Section: Stay inspired with goal-setting prompts.</li>
+            <li>Assignment Planner: Track homework, projects, and deadlines.</li>
+            <li>Exam Schedule: Plan your exams and reduce last-minute stress.</li>
+            <li>Weekly & Daily Layouts: Manage your week and daily tasks effectively.</li>
+            <li>Notes Section: Jot down important reminders, tips, or study reflections.</li>
+            <li>Motivational Prompts: Stay inspired with goal-setting and reflection areas.</li>
+            <li>Printable & Digital-Friendly: Fill by hand or use a PDF editor for convenience.</li>
           </ul>
-          <a href="https://drive.google.com/uc?export=download&id=1Kha3fi8ihAR6Q_PXKf3vsGjdkjnw9npY" class="btn-primary btn-small ga-button" data-event="download_click" data-label="Study Planner" target="_blank">Download</a>
+          <a href="https://drive.google.com/uc?export=download&id=1uezy3yt8a5IDxbGeOvWrvJilgcsFJLUW" class="btn-primary btn-small ga-button" data-event="download_click" data-label="Study Planner Printable" target="_blank">Download</a>
         </div>
       </div>
 
@@ -217,10 +219,9 @@
       function animation(currentTime) {
         if (startTime === null) startTime = currentTime;
         const timeElapsed = currentTime - startTime;
-        const duration = 1000; // 1 second
-        const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+        const run = easeInOutQuad(timeElapsed, startPosition, distance, 1000);
         window.scrollTo(0, run);
-        if (timeElapsed < duration) requestAnimationFrame(animation);
+        if (timeElapsed < 1000) requestAnimationFrame(animation);
       }
 
       function easeInOutQuad(t, b, c, d) {
