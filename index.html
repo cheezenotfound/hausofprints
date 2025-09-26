@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Haus of Prints — Printables, Planners & Digital Products</title>
 
-  <!-- Meta description for SEO -->
-  <meta name="description" content="Discover minimalistic planners, printables, and digital products to organize your life, track goals, and boost productivity. Instant downloads for students, professionals, and creators." />
-
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://i.imgur.com/Ymzugpk.png">
 
@@ -27,43 +24,33 @@
     :root{
       --bg: #fff7fa;
       --card: #ffffff;
-      --muted: #4b5563;
+      --muted: #6b7280;
       --radius: 14px;
       --shadow: 0 6px 18px rgba(20,24,40,0.06);
       --shadow-strong: 0 10px 30px rgba(16,24,40,0.12);
       font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     }
-
     *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg, var(--bg), #ffeef5);color:#0f172a;line-height:1.45;padding-bottom:80px;scroll-behavior:smooth;}
+    body{margin:0;background:linear-gradient(180deg, var(--bg), #ffeef5);color:#0f172a;line-height:1.45;padding-bottom:80px;}
     a{color:inherit;text-decoration:none;user-select:none;}
     .container{max-width:1200px;margin:0 auto;padding:28px}
 
     /* Header */
     header{position:sticky;top:0;background:rgba(255,255,255,0.7);backdrop-filter:blur(6px);z-index:40;border-bottom:1px solid rgba(15,23,42,0.04);}
-    .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      height:80px;
-    }
+    .nav{display:flex;align-items:center;justify-content:space-between;height:80px;}
     .logo{font-weight:700;font-size:1.25rem;color:#ec4899;}
     .nav-links{display:flex;gap:20px;}
     .nav-links a{font-weight:500;transition:color .25s;cursor:pointer;user-select:none;}
     .nav-links a:hover{color:#ec4899;}
-    .donate-btn{
-      display:inline-block;padding:10px 20px;font-weight:700;color:#fff;background:#ff3b3b;
-      border-radius:var(--radius);text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-      animation:pulse 1.5s infinite;text-decoration:none;user-select:none;margin-left:20px;
-    }
+    .donate-btn{display:inline-block;padding:10px 20px;font-weight:700;color:#fff;background:#ff3b3b;border-radius:var(--radius);text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;animation:pulse 1.5s infinite;text-decoration:none;user-select:none;margin-left:20px;position:relative;top:0;left:0;}
     @keyframes pulse{0% {transform:scale(1);opacity:1;}50% {transform:scale(1.1);opacity:0.85;}100% {transform:scale(1);opacity:1;}}
 
     /* Hero */
     .hero{padding:100px 28px;text-align:center;}
     .hero h1{font-size:2.8rem;font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:16px;}
-    .hero p{color:var(--muted);max-width:600px;margin:0 auto 28px;font-size:1.15rem;}
-    .btn-primary{background:#d6367a;color:white;padding:14px 28px;border-radius:var(--radius);box-shadow:var(--shadow);transition:all .3s;font-weight:600;display:inline-block;user-select:none;}
-    .btn-primary:hover{background:#c81f6f;transform:translateY(-2px);box-shadow:var(--shadow-strong)}
+    .hero p{color:#6b7280;max-width:600px;margin:0 auto 28px;font-size:1.15rem;}
+    .btn-primary{background:#ec4899;color:white;padding:14px 28px;border-radius:var(--radius);box-shadow:var(--shadow);transition:all .3s;font-weight:600;display:inline-block;user-select:none;}
+    .btn-primary:hover{background:#db2777;transform:translateY(-2px);box-shadow:var(--shadow-strong)}
 
     /* Grid */
     .grid{display:flex;flex-direction:column;gap:28px;margin-top:60px;}
@@ -72,13 +59,13 @@
     .card img{width:80%;max-width:300px;height:auto;margin-bottom:16px;border-radius:var(--radius);}
     .card-content{width:100%}
     .card h3{margin:0;font-size:1.2rem;font-weight:600}
-    .card p{color:var(--muted);font-size:.95rem;margin:12px 0}
+    .card p{color:#6b7280;font-size:.95rem;margin:12px 0}
     .btn-small{padding:10px 18px;font-size:.9rem;display:inline-block;user-select:none;}
 
     /* Sections */
     section.about, section.contact{padding:80px 28px;text-align:center;background:#fff0f6;border-radius:var(--radius);margin-top:60px;}
     section h2{font-family:'Poppins',sans-serif;font-weight:700;font-size:2rem;margin-bottom:16px;}
-    section p{color:var(--muted);max-width:700px;margin:0 auto;font-size:1rem;}
+    section p{color:#6b7280;max-width:700px;margin:0 auto;font-size:1rem;}
 
     /* Footer */
     footer{margin-top:100px;padding:40px 28px;background:#fff0f6;color:#475569;text-align:center;font-size:.9rem}
@@ -91,10 +78,10 @@
     <div class="container nav">
       <div class="logo">Haus of Prints</div>
       <nav class="nav-links">
-        <a href="#hero">Home</a>
-        <a href="#downloads">Downloads</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a data-scroll-to="#hero">Home</a>
+        <a data-scroll-to="#shop">Shop</a>
+        <a data-scroll-to="#about">About</a>
+        <a data-scroll-to="#contact">Contact</a>
       </nav>
       <a href="https://dailyhealthfitguide.gumroad.com/l/donation"
          target="_blank"
@@ -109,25 +96,24 @@
   <section class="hero" id="hero">
     <h1>Organize Your Life with Beautiful Printables</h1>
     <p>Discover planners, templates, and eBooks designed to simplify your day and spark productivity — all instantly downloadable.</p>
-    <a href="#downloads" class="btn-primary">Get Now</a>
+    <a data-scroll-to="#shop" class="btn-primary">Get Now</a>
   </section>
 
-  <main class="container" id="downloads">
-    <h2>Downloads</h2>
+  <main class="container" id="shop">
     <div class="grid">
 
       <!-- Minimalist To-Do List -->
       <div class="card">
-        <img src="https://i.imgur.com/s4jOmZx.png" alt="Minimalist To-Do List Printable" width="300" height="300">
+        <img src="https://i.imgur.com/s4jOmZx.png" alt="Minimalist To-Do List Printable" fetchpriority="high">
         <div class="card-content">
           <h3>Minimalist To-Do List – Daily Task Planner Printable</h3>
-          <p>Stay organized and make every day productive with this Minimalist To-Do List Printable. Designed to help you focus on what truly matters, this planner keeps your tasks clear and structured, so you can accomplish more with less stress.</p>
+          <p>Maximize daily productivity with our clean, minimalistic To-Do List. Perfect for students, professionals, and anyone looking to stay organized and focused.</p>
           <ul>
-            <li>Clean, simple layout with tick boxes for each task.</li>
-            <li>Dotted lines for neat, easy-to-follow entries.</li>
-            <li>Spacious design to write tasks, notes, or reminders.</li>
-            <li>Light floral accents for a subtle, calming aesthetic.</li>
-            <li>Perfect for daily task management, goal setting, students, professionals, or anyone who loves simplicity.</li>
+            <li>Simple and clean layout with tick boxes for each task.</li>
+            <li>Dotted lines for easy-to-follow task entries.</li>
+            <li>Ample space for notes and reminders.</li>
+            <li>Subtle floral accents for aesthetic appeal.</li>
+            <li>Ideal for daily task management, goal tracking, and productivity enhancement.</li>
           </ul>
           <a href="https://drive.google.com/uc?export=download&id=1_5HVZdTJhzA_OW1OItcJIVuZd7HKX8-M" class="btn-primary btn-small ga-button" target="_blank">Download</a>
         </div>
@@ -135,16 +121,16 @@
 
       <!-- ADHD Daily Planner -->
       <div class="card">
-        <img src="https://i.imgur.com/Ii3vCyK.png" alt="ADHD Daily Planner Printable" width="300" height="300">
+        <img src="https://i.imgur.com/Ii3vCyK.png" alt="ADHD Daily Planner Printable">
         <div class="card-content">
-          <h3>ADHD Daily Planner Printable – Hourly Schedule with Mood, Meals & Gratitude Tracker</h3>
-          <p>Stay organized and focused with this comprehensive ADHD Daily Planner. Designed to support individuals with ADHD, this printable planner offers a structured layout to help manage daily tasks and routines.</p>
+          <h3>ADHD Daily Planner Printable – Hourly Schedule, Mood & Gratitude Tracker</h3>
+          <p>Stay organized and focused with this comprehensive planner, designed specifically for ADHD productivity and routine management.</p>
           <ul>
-            <li>Hourly schedule for tasks, appointments, and routines.</li>
-            <li>Mood tracker to help identify patterns and improve well-being.</li>
-            <li>Meals and water intake tracker for healthy habits.</li>
-            <li>Gratitude section to cultivate positivity daily.</li>
-            <li>Perfect for students, professionals, or anyone with ADHD.</li>
+            <li>Hourly schedule layout for structured planning.</li>
+            <li>Mood and gratitude tracking sections for emotional awareness.</li>
+            <li>Meal and habit trackers to maintain routines.</li>
+            <li>Compact, printable format for easy use at home or on-the-go.</li>
+            <li>Helps boost focus, organization, and daily productivity.</li>
           </ul>
           <a href="https://drive.google.com/uc?export=download&id=1y-JyRh-5DPwW6Iu-OwUg7J_hrb-EqKeu" class="btn-primary btn-small ga-button" target="_blank">Download</a>
         </div>
@@ -152,16 +138,16 @@
 
       <!-- Social Media Planner -->
       <div class="card">
-        <img src="https://i.imgur.com/NzFDpeO.jpeg" alt="Social Media Content & Growth Planner" width="300" height="300">
+        <img src="https://i.imgur.com/NzFDpeO.jpeg" alt="Social Media Content & Growth Planner">
         <div class="card-content">
           <h3>Social Media Content & Growth Planner – Weekly Tracker & Analytics Printable</h3>
-          <p>Stay organized and grow your social media presence with this comprehensive Social Media Content & Growth Planner. Plan content, track analytics, and manage collaborations—all in one place.</p>
+          <p>Plan your content, track analytics, and manage collaborations efficiently with this comprehensive social media planner.</p>
           <ul>
-            <li>Weekly content calendar for posts and stories.</li>
+            <li>Weekly content schedule for consistent posting.</li>
             <li>Analytics tracker to monitor growth and engagement.</li>
-            <li>Collaboration notes and influencer outreach planning.</li>
-            <li>Hashtag library and content idea section.</li>
-            <li>Perfect for content creators, marketers, and small businesses.</li>
+            <li>Collaboration notes and task management sections.</li>
+            <li>Printable format for offline use or reference.</li>
+            <li>Perfect for social media managers, influencers, and content creators.</li>
           </ul>
           <a href="https://drive.google.com/uc?export=download&id=15wirhG_CBT6M40sixsJ7wAiq_ItkJKM6" class="btn-primary btn-small ga-button" target="_blank">Download</a>
         </div>
@@ -169,16 +155,16 @@
 
       <!-- Study Planner -->
       <div class="card">
-        <img src="https://i.imgur.com/64Q83Kp.jpeg" alt="Study Planner Printable" width="300" height="300">
+        <img src="https://i.imgur.com/64Q83Kp.jpeg" alt="Study Planner Printable">
         <div class="card-content">
           <h3>Study Planner Printable – Organize Courses, Exams & Notes</h3>
-          <p>Boost your productivity and stay on top of your studies with this comprehensive Study Planner Printable. Perfect for handwriting or digital use, it keeps all your important study details in one place.</p>
+          <p>Boost your academic productivity with this structured study planner, designed to organize your courses, exams, and notes efficiently.</p>
           <ul>
-            <li>Organize courses, assignments, and exams in one layout.</li>
-            <li>Track study sessions, deadlines, and priorities.</li>
-            <li>Space for notes, reminders, and goal tracking.</li>
-            <li>Monthly, weekly, and daily planner pages included.</li>
-            <li>Ideal for students of all ages and disciplines.</li>
+            <li>Course and subject organization for focused study.</li>
+            <li>Exam and assignment tracker for timely preparation.</li>
+            <li>Note sections for easy reference and summary.</li>
+            <li>Printable layout suitable for students of all levels.</li>
+            <li>Enhances planning, focus, and academic performance.</li>
           </ul>
           <a href="https://drive.google.com/uc?export=download&id=1uezy3yt8a5IDxbGeOvWrvJilgcsFJLUW" class="btn-primary btn-small ga-button" target="_blank">Download</a>
         </div>
@@ -186,16 +172,16 @@
 
       <!-- Budget Tracker -->
       <div class="card">
-        <img src="https://i.imgur.com/c8rtG17.jpeg" alt="Budget Tracker Printable" width="300" height="300">
+        <img src="https://i.imgur.com/c8rtG17.jpeg" alt="Budget Tracker Printable">
         <div class="card-content">
-          <h3>Budget Tracker Printable – Organize Your Finances Easily</h3>
-          <p>Take control of your money with this Budget Tracker Printable! Track expenses, savings, and financial goals all in one clean and easy-to-use layout. Perfect for students, families, and anyone looking to simplify budgeting.</p>
+          <h3> Budget Tracker Printable – Organize Your Finances Easily </h3>
+          <p>Take control of your finances with this comprehensive Budget Tracker Printable. Track expenses, savings, and financial goals all in one structured layout.</p>
           <ul>
-            <li>Track daily, weekly, and monthly expenses.</li>
-            <li>Monitor income and savings goals.</li>
-            <li>Visual charts for spending and saving progress.</li>
-            <li>Customizable categories for personal or family budgets.</li>
-            <li>Helps build financial awareness and healthy money habits.</li>
+            <li>Daily, weekly, and monthly expense tracking sections.</li>
+            <li>Savings goal trackers and financial overview pages.</li>
+            <li>Simple and clean design for easy readability.</li>
+            <li>Printable format for quick access at home or office.</li>
+            <li>Ideal for students, professionals, and families seeking financial organization.</li>
           </ul>
           <a href="https://drive.google.com/uc?export=download&id=1mvKth05qfahcIoKxub1G-GwG5kKRGP_C" class="btn-primary btn-small ga-button" target="_blank">Download</a>
         </div>
@@ -206,12 +192,12 @@
 
   <section class="about" id="about">
     <h2>About Haus of Prints</h2>
-    <p>We create minimalistic, elegant printables and planners designed to simplify your life. Whether you’re looking to stay organized, boost productivity, or simply enjoy beautiful templates, we’ve got you covered.</p>
+    <p>We create minimalistic, elegant printables and planners designed to simplify your life.</p>
   </section>
 
   <section class="contact" id="contact">
     <h2>Contact</h2>
-    <p>If you have any questions, need support, or just want to say hi, contact us at <a href="mailto:dailyhealthguide2@gmail.com">dailyhealthguide2@gmail.com</a>. We’re happy to help!</p>
+    <p>If you have questions, contact us at <a href="mailto:dailyhealthguide2@gmail.com">dailyhealthguide2@gmail.com</a>.</p>
   </section>
 
   <footer>
@@ -219,22 +205,41 @@
     <div>
       <a href="https://nl.pinterest.com/DailyHealthFitGuide/" target="_blank">Pinterest</a> ·
       <a href="https://dailyhealthfitguide.gumroad.com/" target="_blank">Gumroad</a>
-      <a href="https://dailyhealthfitguide.gumroad.com/l/donation" target="_blank" class="donate-btn ga-button" data-event="donate_click" data-label="Donate Button">Donate</a>
+      <a href="https://dailyhealthfitguide.gumroad.com/l/donation" target="_blank" class="donate-btn ga-button">Donate</a>
     </div>
   </footer>
 
   <script>
-    // Smooth scroll for all anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
+    // Smooth scroll
+    function smoothScroll(target) {
+      const element = document.querySelector(target);
+      if(!element) return;
+      const targetPosition = element.getBoundingClientRect().top + window.scrollY;
+      const startPosition = window.scrollY;
+      const distance = targetPosition - startPosition;
+      let startTime = null;
+
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const run = easeInOutQuad(timeElapsed, startPosition, distance, 1000);
+        window.scrollTo(0, run);
+        if (timeElapsed < 1000) requestAnimationFrame(animation);
+      }
+
+      function easeInOutQuad(t, b, c, d) {
+        t /= d/2;
+        if(t < 1) return c/2*t*t + b;
+        t--; return -c/2*(t*(t-2)-1)+b;
+      }
+
+      requestAnimationFrame(animation);
+    }
+
+    document.querySelectorAll('[data-scroll-to]').forEach(link => {
+      link.addEventListener('click', e => {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if(target){
-          window.scrollTo({
-            top: target.offsetTop - 20, // adjust for sticky header
-            behavior: 'smooth'
-          });
-        }
+        smoothScroll(link.getAttribute('data-scroll-to'));
       });
     });
 
